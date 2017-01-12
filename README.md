@@ -2,6 +2,10 @@
 A simple web-scraper and microservice for processing categories/products,
 written in [Python/Flask](http://flask.pocoo.org).
 
+The scraper itself has been specifically written to scrape [http://www.farah.co.uk], using the Python library [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/#Download). It scrapes category and product information into JSON files.
+
+The Flask microservice loads the JSON data into a SQLite database and makes that data available. Please see the documentation below for more details.
+
 ## Contents
 - Flask Microservice - Product Scraper
   * [Dependencies](#dependencies)
