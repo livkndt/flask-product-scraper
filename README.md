@@ -1,43 +1,49 @@
 # Flask Microservice - Product Scraper
-A simple web-scraper and microservice writting in Python/Flask.
+A simple web-scraper and microservice for processing categories/products,
+written in [Python/Flask](http://flask.pocoo.org).
 
 ## Contents
 
-## About
-
 ## Dependencies
-This project was built using Python v2.7.10 and Flask v0.12, on Mac OS 10.12.2.
+This project was built using **Python v2.7.10** and **Flask v0.12**, on **Mac OS 10.12.2**.
 Please be aware that some of these instructions are platform specific and you
-may need to adapt for your own platform. Please refer to the Python/Flask
+may need to adapt for your own platform. Please refer to the [Flask](http://flask.pocoo.org)
 documentation.
 
 ## Installation
 ### Install virtualenv
-It is recommended that you run Python projects inside virtual environments.
-`$ sudo pip install virtualenv`
+It is recommended that you run Python projects inside [virtual environments](https://virtualenv.pypa.io/en/stable/).
+```
+$ sudo pip install virtualenv
+```
 
 To create a virtualenv:
 ```
-$ cd myproject
+$ cd flask-product-scraper-master
 $ virtualenv venv
 New python executable in venv/bin/python
 Installing setuptools, pip............done.
 ```
 
 When you want to work on the project:
-`$ . venv/bin/activate`
+```
+$ . venv/bin/activate
+```
 
 Frequent use:
-`alias venv='. venv/bin/activate'`
+```
+alias venv='. venv/bin/activate'
+```
 
 To finish:
-`$ deactivate`
+```
+$ deactivate
+```
 
 ### Install productscraper
 The following will install all the required dependencies
 ```
-$ cd productscraper/
-$ python setup.py install
+$ python setup.py install -r requirements.txt
 ...
 ```
 Next: You will need to run the web scraper to populate the database,
@@ -47,7 +53,7 @@ before you can do anything else.
 Run the web scraper. This will take some time while it crawls the entire site and
 parses the available products:
 ```
-$ cd productscraper/productscraper/
+$ cd productscraper/
 $ python scrape.py
 ...
 ```
