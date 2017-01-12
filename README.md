@@ -3,14 +3,30 @@ A simple web-scraper and microservice for processing categories/products,
 written in [Python/Flask](http://flask.pocoo.org).
 
 ## Contents
+- Flask Microservice - Product Scraper
+  * [Dependencies](#dependencies)
+  * [Installation](#installation)
+    + [Install virtualenv](#install-virtualenv)
+    + [Install productscraper](#install-scraper)
+    + [Run the Web Scraper](#run-scraper)
+    + [Initialise the SQLite database](#init-db)
+  * [Running the Services](#running-the-services)
+  * [API Docs](#api-docs)
+    + [Get Products](#get-products)
+    + [Get Products by Category ID](#get-products-by-category-id)
+    + [Get Categories](#get-categories)
+  * [License](#license)
 
+<a name="dependencies"></a>
 ## Dependencies
 This project was built using **Python v2.7.10** and **Flask v0.12**, on **Mac OS 10.12.2**.
 Please be aware that some of these instructions are platform specific and you
 may need to adapt for your own platform. Please refer to the [Flask](http://flask.pocoo.org)
 documentation.
 
+<a name="installation"></a>
 ## Installation
+<a name="install-virtualenv"></a>
 ### Install virtualenv
 It is recommended that you run Python projects inside [virtual environments](https://virtualenv.pypa.io/en/stable/).
 ```
@@ -40,6 +56,7 @@ To finish:
 $ deactivate
 ```
 
+<a name="install-scraper"></a>
 ### Install productscraper
 The following will install all the required dependencies
 ```
@@ -49,6 +66,7 @@ $ pip install .
 **Next: You will need to run the web scraper to populate the database,
 before you can do anything else.**
 
+<a name="run-scraper"></a>
 ### Run the Web Scraper
 Run the web scraper. This will take some time while it crawls the entire site and
 parses the available products. Make sure you are in the same directory as `scrape.py`.
@@ -61,6 +79,7 @@ This does two things; downloads a JSON file of all the categories to database/ca
 and downloads a JSON file of all the products to database/product.json.
 The list of URLs that are crawled will be printed to the console.
 
+<a name="init-db"></a>
 ### Initialise the SQLite database
 Make sure you are in the same directory as `app.py`.
 ```
@@ -72,6 +91,7 @@ The database directory should now contain a `productscraper.db` file which will 
 two tables; a product table and a category table, both containing the data from
 the JSON files.
 
+<a name="running-the-services"></a>
 ## Running the Services
 Start the app:
 ```
@@ -83,7 +103,9 @@ $ flask run
 ```
 If you navigate to the URL, you should see a simple UI to view the scraped products.
 
+<a name="api-docs"></a>
 ## API Docs
+<a name="get-products"></a>
 ### Get Products
 * URL: /product
 * Method: `GET`
@@ -102,6 +124,7 @@ $.ajax({
 });
 ```
 
+<a name="get-products-by-category-id"></a>
 ### Get Products by Category ID
 * URL: /product/category/{categoryID}
 * Method: `GET`
@@ -121,6 +144,7 @@ $.ajax({
 });
 ```
 
+<a name="get-categories"></a>
 ### Get Categories
 * URL: /category
 * Method: `GET`
@@ -139,5 +163,6 @@ $.ajax({
 });
 ```
 
+<a name="license"></a>
 ## License
 [MIT](http://link.com)
