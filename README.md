@@ -43,15 +43,15 @@ $ deactivate
 ### Install productscraper
 The following will install all the required dependencies
 ```
-$ python setup.py install -r requirements.txt
+$ pip install .
 ...
 ```
-Next: You will need to run the web scraper to populate the database,
-before you can do anything else.
+**Next: You will need to run the web scraper to populate the database,
+before you can do anything else.**
 
-## Web Scraper
+### Run the Web Scraper
 Run the web scraper. This will take some time while it crawls the entire site and
-parses the available products:
+parses the available products. Make sure you are in the same directory as `scrape.py`.
 ```
 $ cd productscraper/
 $ python scrape.py
@@ -91,7 +91,7 @@ If you navigate to the URL, you should see a simple UI to view the scraped produ
 * Success Response: `{ "catId": 1, "prodCode": "F4RF6002GP", "prodId": 1 ... }`
 * Error Response:
 * Sample call:
-```
+```javascript
 $.ajax({
 	url: "/product",
 	dataType: "json",
@@ -109,7 +109,7 @@ $.ajax({
 * Success Response: `{ "catId": 1, "prodCode": "F4RF6002GP", "prodId": 1 ... }`
 * Error Response:
 * Sample call:
-```
+```javascript
 $.ajax({
 	url: "/product/category/",
 	params: { categoryId: 1 },
@@ -128,7 +128,7 @@ $.ajax({
 * Success Response: `{ "catId": 1, "parentCatId": 0, "catTitle": "Clothing" ... }`
 * Error Response:
 * Sample call:
-```
+```javascript
 $.ajax({
 	url: "/category",
 	dataType: "json",

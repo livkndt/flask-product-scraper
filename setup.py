@@ -18,7 +18,6 @@ setup(
         'Jinja2==2.9.4',
         'MarkupSafe==0.23',
         'ProductScraperFlask==0.1',
-        'ruamel.ordereddict==0.4.9',
         'typing==3.5.3.0',
         'Werkzeug==0.11.15'
     ],
