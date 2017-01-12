@@ -41,9 +41,11 @@ $ deactivate
 ```
 
 ### Install productscraper
-The following will install all the required dependencies
+The following will install the productscraper applications the required dependencies,
+and then export the Flask app.
 ```
-$ pip install .
+$ pip install -e .
+$ export FLASK_APP=productscraper
 ...
 ```
 **Next: You will need to run the web scraper to populate the database,
@@ -75,7 +77,6 @@ the JSON files.
 ## Running the Services
 Start the app:
 ```
-$ export FLASK_APP=productscraper
 $ flask run
 * Serving Flask app "productscraper"
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
