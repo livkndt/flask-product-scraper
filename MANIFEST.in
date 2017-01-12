@@ -1,0 +1,3 @@
+graft productscraper/templates
+graft productscraper/static
+include productscraper/database/schema.sql

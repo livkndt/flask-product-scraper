@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ config["PROJECT_TITLE"] }}</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+	<link href="../static/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">{{ config["PROJECT_TITLE"] }}</h3>
+        <hr>
+        <nav>
+          <ul class="nav nav-pills pull-left">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            {% for entry in entries %}
+              {% if entry.parentCatId == 0 %}
+                <li role="presentation"><a class="cat-link" id="{{ entry.catId }}">{{ entry.catTitle }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1>{{ config["PROJECT_TITLE"] }}</h1>
+        <p class="lead">Click a category to list products.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="loader" style="display:none;"></div>
+          <div id="prod-list-title">Click a category in the navigation to load products.</div>
+          <ul id="prod-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/js/productscraper.js"></script>
+  </body>
+</html>
